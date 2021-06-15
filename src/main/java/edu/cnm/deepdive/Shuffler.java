@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Shuffler {
 
-  private final Random rng = null;
+  private final Random rng;
 
   public Shuffler(Random rng) {
     this.rng = rng;
@@ -19,13 +19,12 @@ public class Shuffler {
     }
   }
 
-}
-public void (byte[] data) {
-     for (int targetIndex = data.length - 1; targetIndex > 0; targetIndex--) {
-       int sourceIndex = rng.nextInt(targetIndex + 1);
-       byte temp = data[targetIndex];
-       data[targetIndex] = data[sourceIndex];
-       data[sourceIndex] = temp;
+  public void shuffle(byte[] data) {
+    for (int targetIndex = data.length - 1; targetIndex > 0; targetIndex--) {
+      int sourceIndex = rng.nextInt(targetIndex + 1);
+      byte temp = data[targetIndex];
+      data[targetIndex] = data[sourceIndex];
+      data[sourceIndex] = temp;
     }
   }
 
@@ -91,7 +90,7 @@ public void (byte[] data) {
       data[sourceIndex] = temp;
     }
   }
-
+}
 
 
 
